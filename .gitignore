@@ -2,4 +2,9 @@ node_modules/
 .env
 frontend/node_modules/
 backend/node_modules/
-dist/
+
+# Ignore Vite build except the final copied one
+frontend/dist/
+
+# Include the final build inside backend for Render
+!backend/frontend-dist/

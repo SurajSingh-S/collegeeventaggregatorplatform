@@ -4,7 +4,7 @@ import axios from 'axios'
 const API_URL = '/api/auth'
 
 // Set default axios config
-axios.defaults.baseURL = 'http://localhost:5000'
+axios.defaults.baseURL = 'https://collegeeventaggregatorplatform-10.onrender.com'
 
 // Get token from localStorage
 const token = localStorage.getItem('token')

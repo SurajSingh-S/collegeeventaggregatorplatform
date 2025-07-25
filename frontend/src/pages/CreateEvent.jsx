@@ -52,7 +52,7 @@ const CreateEvent = () => {
 
     const token = localStorage.getItem('token');
 
-const response = await axios.post('http://localhost:5000/api/events', form, {
+const response = await axios.post('https://collegeeventaggregatorplatform-10.onrender.com/api/events', form, {
   headers: {
     'Content-Type': 'multipart/form-data',
     Authorization: `Bearer ${token}`

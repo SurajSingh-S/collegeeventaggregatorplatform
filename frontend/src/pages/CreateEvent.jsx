@@ -27,46 +27,46 @@ const CreateEvent = () => {
   }
 
   const handleSubmit = async (e) => {
-  e.preventDefault()
+    e.preventDefault()
 
-  // Validation
-  if (!formData.title || !formData.description || !formData.date || !formData.time || !formData.location) {
-    toast.error('Please fill in all required fields')
-    return
-  }
-
-  // Check if date is in the future
-  const eventDate = new Date(formData.date)
-  if (eventDate < new Date()) {
-    toast.error('Event date must be in the future')
-    return
-  }
-
-  try {
-    setLoading(true)
-
-    const form = new FormData()
-    for (const key in formData) {
-      form.append(key, formData[key])
+    // Validation
+    if (!formData.title || !formData.description || !formData.date || !formData.time || !formData.location) {
+      toast.error('Please fill in all required fields')
+      return
     }
 
-    const token = localStorage.getItem('token');
+    // Check if date is in the future
+    const eventDate = new Date(formData.date)
+    if (eventDate < new Date()) {
+      toast.error('Event date must be in the future')
+      return
+    }
 
-const response = await axios.post('https://collegeeventaggregatorplatform-10.onrender.com/api/events', form, {
-  headers: {
-    'Content-Type': 'multipart/form-data',
-    Authorization: `Bearer ${token}`
-  }
-});
+    try {
+      setLoading(true)
 
-    toast.success('Event created successfully!')
-    navigate(`/events/${response.data.event._id}`)
-  } catch (error) {
-    toast.error(error.response?.data?.message || 'Failed to create event')
-  } finally {
-    setLoading(false)
+      const form = new FormData()
+      for (const key in formData) {
+        form.append(key, formData[key])
+      }
+
+      const token = localStorage.getItem('token');
+
+      const response = await axios.post('https://collegeeventaggregatorplatform-15.onrender.com/api/events', form, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          Authorization: `Bearer ${token}`
+        }
+      });
+
+      toast.success('Event created successfully!')
+      navigate(`/events/${response.data.event._id}`)
+    } catch (error) {
+      toast.error(error.response?.data?.message || 'Failed to create event')
+    } finally {
+      setLoading(false)
+    }
   }
-}
 
 
   const categories = [
@@ -212,7 +212,7 @@ const response = await axios.post('https://collegeeventaggregatorplatform-10.onr
 
           <div>
             <label htmlFor="bannerImage" className="block text-sm font-medium text-gray-700 mb-2">
-              Banner Image 
+              Banner Image
             </label>
             <input
               type="file"
@@ -223,7 +223,7 @@ const response = await axios.post('https://collegeeventaggregatorplatform-10.onr
               className="input-field"
             />
             <p className="text-sm text-gray-500 mt-1">
-              Upload an image 
+              Upload an image
             </p>
           </div>
 

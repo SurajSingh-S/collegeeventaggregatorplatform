@@ -4,6 +4,7 @@ import { Plus } from 'lucide-react'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 
+
 const CreateEvent = () => {
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false)
@@ -52,7 +53,7 @@ const CreateEvent = () => {
 
       const token = localStorage.getItem('token');
 
-      const response = await axios.post('https://collegeeventaggregatorplatform-10.onrender.com/api/events', form, {
+      const response = await axios.post('https://collegeeventaggregatorplatform-wayabove.onrender.com/api/events', form, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${token}`

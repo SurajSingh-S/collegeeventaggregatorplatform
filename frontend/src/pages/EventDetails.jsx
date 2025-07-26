@@ -145,28 +145,13 @@ const EventDetails = () => {
       {/* Event Header */}
       <div className="card">
         {event.bannerImage && (
-          // <img 
-          //   src={event.bannerImage} 
-          //   alt={event.title}
-          //   className="w-full h-64 object-cover rounded-lg mb-6"
-          // />
-
-
-
-
-          <img
-            src={event.bannerImage?.startsWith('http')
-              ? event.bannerImage
-              : `https://collegeeventaggregatorplatform-wayabove.onrender.com${event.bannerImage}`
-            }
+          <img 
+            src={event.bannerImage} 
             alt={event.title}
             className="w-full h-64 object-cover rounded-lg mb-6"
           />
-
-
-
         )}
-
+        
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-3">
@@ -175,7 +160,7 @@ const EventDetails = () => {
                 {event.category}
               </span>
             </div>
-
+            
             <div className="grid md:grid-cols-2 gap-4 text-gray-600">
               <div className="flex items-center">
                 <Calendar className="h-5 w-5 mr-2" />
@@ -200,14 +185,14 @@ const EventDetails = () => {
           <div className="flex flex-col gap-3">
             {canUserEditEvent() && (
               <div className="flex gap-2">
-                <Link
+                <Link 
                   to={`/edit-event/${event._id}`}
                   className="flex items-center gap-2 btn-secondary"
                 >
                   <Edit className="h-4 w-4" />
                   Edit
                 </Link>
-                <button
+                <button 
                   onClick={handleDeleteEvent}
                   className="flex items-center gap-2 btn-danger"
                 >
@@ -238,10 +223,10 @@ const EventDetails = () => {
                     disabled={registering || isEventPast(event.date) || isEventFull(event.registrationCount, event.maxParticipants)}
                     className="btn-primary w-full"
                   >
-                    {registering ? 'Registering...' :
-                      isEventPast(event.date) ? 'Event Ended' :
-                        isEventFull(event.registrationCount, event.maxParticipants) ? 'Event Full' :
-                          'Register for Event'}
+                    {registering ? 'Registering...' : 
+                     isEventPast(event.date) ? 'Event Ended' :
+                     isEventFull(event.registrationCount, event.maxParticipants) ? 'Event Full' :
+                     'Register for Event'}
                   </button>
                 )}
               </div>

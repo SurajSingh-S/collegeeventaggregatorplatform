@@ -69,10 +69,7 @@ const createEvent = async (req, res) => {
   try {
 const { title, description, date, time, location, category, maxParticipants } = req.body;
 // const bannerImage = req.file ? `/uploads/${req.file.filename}` : ''; 
-//const bannerImage = req.file ? `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}` : '';
-
-// In your createEvent controller, save the full URL
-bannerImage: req.file ? `https://collegeeventaggregatorplatform-wayabove.onrender.com/uploads/${req.file.filename}` : null
+const bannerImage = req.file ? `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}` : '';
 
     const event = new Event({
       title,

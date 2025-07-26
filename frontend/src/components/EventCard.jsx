@@ -27,24 +27,7 @@ const EventCard = ({ event }) => {
 
 
 
-  const getImageUrl = (bannerImage) => {
-    if (!bannerImage) return '/default-banner.jpg'
-    
-    // If it's already a full URL, return as is
-    if (bannerImage.startsWith('http')) return bannerImage
-    
-    // If it starts with /uploads, prepend backend URL
-    if (bannerImage.startsWith('/uploads')) {
-      return `https://collegeeventaggregatorplatform-wayabove.onrender.com${bannerImage}`
-    }
-    
-    // Otherwise, assume it's just the filename
-    return `https://collegeeventaggregatorplatform-wayabove.onrender.com/uploads/${bannerImage}`
-  }
-
-
-
-
+  
 
   return (
     <div className="card hover:shadow-lg transition-shadow duration-300">
@@ -60,24 +43,11 @@ const EventCard = ({ event }) => {
         // />
 
 
-        // <img
-        //   src={`${import.meta.env.VITE_API_BASE_URL}${event.bannerImage}`}
-        //   alt="Event Banner"
-        //   className="w-full h-48 object-cover rounded-t-xl"
-        // />
-
-
-
-
         <img
-          src={getImageUrl(event.bannerImage)}
-          alt={event.title}
+          src={`${import.meta.env.VITE_API_BASE_URL}${event.bannerImage}`}
+          alt="Event Banner"
           className="w-full h-48 object-cover rounded-t-xl"
-          onError={(e) => {
-            e.target.src = '/default-banner.jpg' // Fallback image
-          }}
         />
-        
 
 
         // <img

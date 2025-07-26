@@ -27,15 +27,23 @@ const EventCard = ({ event }) => {
   return (
     <div className="card hover:shadow-lg transition-shadow duration-300">
       {event.bannerImage && (
+        // <img
+        //   src={
+        //     event.bannerImage
+        //       ? `${import.meta.env.VITE_API_BASE_URL}${event.bannerImage}`
+        //       : '/default-banner.jpg'
+        //   }
+        //   alt={event.title}
+        //   className="w-full h-48 object-cover rounded-t"
+        // />
+
+
         <img
-          src={
-            event.bannerImage
-              ? `${import.meta.env.VITE_API_BASE_URL}${event.bannerImage}`
-              : '/default-banner.jpg'
-          }
-          alt={event.title}
-          className="w-full h-48 object-cover rounded-t"
+          src={`${import.meta.env.VITE_API_BASE_URL}${event.bannerImage}`}
+          alt="Event Banner"
+          className="w-full h-48 object-cover rounded-t-xl"
         />
+
 
         // <img
         //   src={event.bannerImage || '/default-banner.jpg'}

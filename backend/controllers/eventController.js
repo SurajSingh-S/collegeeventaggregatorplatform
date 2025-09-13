@@ -71,6 +71,7 @@ const { title, description, date, time, location, category, maxParticipants } = 
 // const bannerImage = req.file ? `/uploads/${req.file.filename}` : ''; 
 //const bannerImage = req.file ? `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}` : '';
 
+let bannerImage = '';
 
 if (req.file) {
   event.bannerImage = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;

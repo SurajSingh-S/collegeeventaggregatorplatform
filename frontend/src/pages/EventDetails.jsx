@@ -145,8 +145,8 @@ const EventDetails = () => {
       {/* Event Header */}
       <div className="card">
         {event.bannerImage && (
-          <img 
-            src={event.bannerImage} 
+           <img 
+            src={event.bannerImage || '/default-banner.jpg'} 
             alt={event.title}
             className="w-full h-64 object-cover rounded-lg mb-6"
           />

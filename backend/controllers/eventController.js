@@ -69,7 +69,13 @@ const createEvent = async (req, res) => {
   try {
 const { title, description, date, time, location, category, maxParticipants } = req.body;
 // const bannerImage = req.file ? `/uploads/${req.file.filename}` : ''; 
-const bannerImage = req.file ? `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}` : '';
+//const bannerImage = req.file ? `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}` : '';
+
+
+if (req.file) {
+  event.bannerImage = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
+}
+
 
     const event = new Event({
       title,
@@ -143,9 +149,14 @@ const updateEvent = async (req, res) => {
     event.maxParticipants = req.body.maxParticipants || event.maxParticipants
 
     // Handle banner image
-    if (req.file) {
-      event.bannerImage = `/uploads/${req.file.filename}`
-    }
+    // if (req.file) {
+    //   event.bannerImage = `/uploads/${req.file.filename}`
+    // }
+
+ if (req.file) {
+  event.bannerImage = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
+}
+
 
     const updatedEvent = await event.save()
     res.status(200).json(updatedEvent)

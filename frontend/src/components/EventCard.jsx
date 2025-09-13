@@ -43,9 +43,9 @@ const EventCard = ({ event }) => {
         // />
 
 
-        <img
-          src={`${import.meta.env.VITE_API_BASE_URL}${event.bannerImage}`}
-          alt="Event Banner"
+         <img
+          src={event.bannerImage || '/default-banner.jpg'}
+          alt={event.title}
           className="w-full h-48 object-cover rounded-t-xl"
         />
 

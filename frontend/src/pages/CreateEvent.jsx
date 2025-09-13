@@ -30,7 +30,7 @@ const CreateEvent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    // Validation
+
     if (!formData.title || !formData.description || !formData.date || !formData.time || !formData.location) {
       toast.error('Please fill in all required fields')
       return

@@ -25,7 +25,9 @@ const Home = () => {
 
   return (
     <div className="space-y-16">
-      {/* Hero Section */}
+
+
+      {/* Hero sex*/}
       <section className="text-center py-20 bg-gradient-to-r from-primary-600 to-primary-800 text-white rounded-2xl">
         <div className="max-w-4xl mx-auto px-6">
           <h1 className="text-5xl font-bold mb-6">
@@ -45,7 +47,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+
+
+
+      {/* Features sex */}
       <section className="grid md:grid-cols-3 gap-8">
         <div className="text-center p-6">
           <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -72,7 +77,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Upcoming Events Section */}
+
+
+      {/* Upcoming Events sex */}
       <section>
         <div className="flex items-center justify-between mb-8">
           <div>
@@ -112,7 +119,7 @@ const Home = () => {
         )}
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Sesx */}
       <section className="bg-gray-100 rounded-2xl p-12 text-center">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">Ready to Get Started?</h2>
         <p className="text-gray-600 mb-8 max-w-2xl mx-auto">

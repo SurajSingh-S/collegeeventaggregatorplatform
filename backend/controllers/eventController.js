@@ -69,15 +69,15 @@ const createEvent = async (req, res) => {
   try {
 const { title, description, date, time, location, category, maxParticipants } = req.body;
 // const bannerImage = req.file ? `/uploads/${req.file.filename}` : ''; 
-//const bannerImage = req.file ? `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}` : '';
+const bannerImage = req.file ? `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}` : '';
 
-let bannerImage = '';
+// let bannerImage = '';
 
-if (req.file) {
-  // event.bannerImage = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
-  bannerImage = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
+// if (req.file) {
+//   // event.bannerImage = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
+//   bannerImage = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
 
-}
+// }
 
 
     const event = new Event({
